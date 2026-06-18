@@ -70,6 +70,6 @@ roslaunch switching_topology_pp_tracking_control_for_mas tracking.launch
 ```
 **Notice 4:** *The control algorithm is executed for 30 s and will be automatically terminated once the 30-second simulation period is completed.*
 
-![Sample Video](paper_demo_ws/readmevi.mp4)
+![Sample Video](https://github.com/CquAutomationChenGang/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies/paper_demo_ws/readmevi.mp4)
 
 
