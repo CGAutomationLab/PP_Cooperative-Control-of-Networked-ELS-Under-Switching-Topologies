@@ -23,9 +23,50 @@ After the installation is completed, please check whether Gazebo and RViz can be
 
 Execute the following commands to run the tracking control code:
 
+
+### 2.1 Clone the Repository
+
+Clone the code of this repository into the home directory:
+
+```bash
+git clone https://github.com/CquAutomationChenGang/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies.git
+```
+### 2.2 Source the Workspace
+
+Source the ROS Noetic environment and the workspace:
+
 ```bash
 source /opt/ros/noetic/setup.bash
-source ~/paper_demo_ws/devel/setup.bash
-roslaunch your_package_name your_launch_file.launch
+cd ~/paper_demo_ws
+source src/install/setup.bash
+```
+### 2.3 Gazebo-based Physical Simulation Platform for the Two-Link Robotic Manipulator
+
+Launch the Gazebo-based physical simulation platform for the two-link robotic manipulator:
+
+```bash
+roslaunch two_link_arm_gazebo gazebo.launch 
+```
+**Notice 3:** *It should be noted that, as long as Gazebo and RViz are successfully launched, the error messages displayed in the terminal do not affect the execution of the simulation and can therefore be ignored, as illustrated in the following figure:*
+
+### 2.4 Run the Observer Launch File
+
+Run the observer launch file:
+
+```bash
+roslaunch switching_topology_pp_tracking_control_for_mas run.launch 
+
+```
+
+### 2.5 Run the Controller Launch File
+
+Run the controller launch file:
+
+```bash
+roslaunch switching_topology_pp_tracking_control_for_mas tracking.launch
+```
+**Notice 4:** *The control algorithm is executed for 30 s and will be automatically terminated once the 30-second simulation period is completed.*
+
+
 
 
