@@ -1,2 +1,4 @@
 # Switching_Topology_PP_Tracking_Control_For_MAS
-ROS Implementation for the Second Subsection of the Simulation Study on Prescribed-Performance Cooperative Control of Networked Euler--Lagrange Systems Under Switching Topologies
+*ROS Implementation for the Second Subsection of the Simulation Study on Prescribed-Performance Cooperative Control of Networked Euler--Lagrange Systems Under Switching Topologies*
+
+*This repository provides a runnable ROS/Gazebo simulation package for reproducing the submitted manuscript results. The full controller source code will be released after publication. This package contains precompiled ROS nodes and the required launch, configuration, model, and visualization files for review.*
