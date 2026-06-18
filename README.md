@@ -19,4 +19,13 @@ https://wiki.ros.org/noetic/Installation/Ubuntu
 
 After the installation is completed, please check whether Gazebo and RViz can be opened properly.
 
+## 2. Running the Tracking Control
+
+Execute the following commands to run the tracking control code:
+
+```bash
+source /opt/ros/noetic/setup.bash
+source ~/paper_demo_ws/devel/setup.bash
+roslaunch your_package_name your_launch_file.launch
+
 
