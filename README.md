@@ -48,6 +48,9 @@ Launch the Gazebo-based physical simulation platform for the two-link robotic ma
 roslaunch two_link_arm_gazebo gazebo.launch 
 ```
 **Notice 3:** *It should be noted that, as long as Gazebo and RViz are successfully launched, the error messages displayed in the terminal do not affect the execution of the simulation and can therefore be ignored, as illustrated in the following figure:*
+![image](src/f1.png)
+![image](src/f2.png)
+
 
 ### 2.4 Run the Observer Launch File
 
