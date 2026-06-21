@@ -1,5 +1,0 @@
-<launch>
-  <!-- 核心节点配置：仅保留必需参数，无多余符号/空格 -->
-  <node pkg="switching_topology_pp_tracking_control_for_mas" type="switching_topology_pp_tracking_control_for_mas_observer" name="switching_topology_pp_tracking_control_for_mas_observer" output="screen" required="true"/>
-</launch>
-
