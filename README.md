@@ -38,7 +38,7 @@ Source the ROS Noetic environment and the workspace:
 ```bash
 source /opt/ros/noetic/setup.bash
 cd ~/paper_demo_ws
-source src/install/setup.bash
+source install/setup.bash
 ```
 ### 2.3 Gazebo-based Physical Simulation Platform for the Two-Link Robotic Manipulator
 
