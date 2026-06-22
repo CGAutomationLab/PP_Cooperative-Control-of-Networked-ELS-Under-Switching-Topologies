@@ -45,6 +45,8 @@ Source the ROS Noetic environment and the workspace:
 
 ```bash
 cd ~/your_workspace/paper_demo_ws
+chmod +x install/_setup_util.py
+chmod +x install/lib/switching_topology_pp_tracking_control_for_mas/*
 source /opt/ros/noetic/setup.bash
 source install/setup.bash
 export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
