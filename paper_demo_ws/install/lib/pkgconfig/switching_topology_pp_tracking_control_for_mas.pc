@@ -1,0 +1,8 @@
+prefix=/home/zhl/ur_demo_ws/install
+
+Name: switching_topology_pp_tracking_control_for_mas
+Description: Description of switching_topology_pp_tracking_control_for_mas
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lswitching_topology_pp_tracking_control_for_mas
+Requires: geometry_msgs nav_msgs roscpp rospy sensor_msgs std_msgs tf trajectory_msgs visualization_msgs
