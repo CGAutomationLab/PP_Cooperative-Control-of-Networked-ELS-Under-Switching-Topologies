@@ -24,21 +24,32 @@ After the installation is completed, please check whether Gazebo and RViz can be
 Execute the following commands to run the tracking control code:
 
 
-### 2.1 Clone the Repository
+### 2.1 Clone the Repository and Install ROS-Control Related Dependencies
 
 Clone the code of this repository into the home directory:
 
 ```bash
 git clone https://github.com/CGAutomationLab/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies.git
 ```
+Install ROS-Control Related Dependencies
+
+```bash
+sudo apt update
+sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-effort-controllers ros-noetic-gazebo-ros-control
+```
+
+
 ### 2.2 Source the Workspace
 
 Source the ROS Noetic environment and the workspace:
 
 ```bash
+cd ~/your_workspace/paper_demo_ws
 source /opt/ros/noetic/setup.bash
-cd ~/paper_demo_ws
 source install/setup.bash
+export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
+export ROS_PACKAGE_PATH=$PWD/install/share:$ROS_PACKAGE_PATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
 ```
 ### 2.3 Gazebo-based Physical Simulation Platform for the Two-Link Robotic Manipulator
 
@@ -54,18 +65,29 @@ roslaunch two_link_arm_gazebo gazebo.launch
 
 ### 2.4 Run the Observer Launch File
 
-Run the observer launch file:
+Open a new terminal and Run the observer launch file:
 
 ```bash
+cd ~/your_workspace/paper_demo_ws
+source /opt/ros/noetic/setup.bash
+source install/setup.bash
+export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
+export ROS_PACKAGE_PATH=$PWD/install/share:$ROS_PACKAGE_PATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
 roslaunch switching_topology_pp_tracking_control_for_mas run.launch 
-
 ```
 
 ### 2.5 Run the Controller Launch File
 
-Run the controller launch file:
+Open a new terminal and Run the controller launch file:
 
 ```bash
+cd ~/your_workspace/paper_demo_ws
+source /opt/ros/noetic/setup.bash
+source install/setup.bash
+export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
+export ROS_PACKAGE_PATH=$PWD/install/share:$ROS_PACKAGE_PATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
 roslaunch switching_topology_pp_tracking_control_for_mas tracking.launch
 ```
 **Notice 4:** *The control algorithm is executed for 30 s and will be automatically terminated once the 30-second simulation period is completed.*
