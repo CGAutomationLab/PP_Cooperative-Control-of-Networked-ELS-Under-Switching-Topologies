@@ -29,7 +29,7 @@ Execute the following commands to run the tracking control code:
 Clone the code of this repository into the home directory:
 
 ```bash
-git clone https://github.com/CquAutomationChenGang/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies.git
+git clone https://github.com/CGAutomationLab/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies.git
 ```
 ### 2.2 Source the Workspace
 
