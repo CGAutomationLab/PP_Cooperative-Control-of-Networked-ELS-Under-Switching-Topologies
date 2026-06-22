@@ -44,20 +44,34 @@ sudo apt install ros-noetic-ros-control ros-noetic-ros-controllers ros-noetic-ef
 Source the ROS Noetic environment and the workspace:
 
 ```bash
-cd ~/your_workspace/paper_demo_ws
+cd ~/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies-main/paper_demo_ws
+touch install/.catkin
 chmod +x install/_setup_util.py
 chmod +x install/lib/switching_topology_pp_tracking_control_for_mas/*
-source /opt/ros/noetic/setup.bash
-source install/setup.bash
-export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
-export ROS_PACKAGE_PATH=$PWD/install/share:$ROS_PACKAGE_PATH
-export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
+cd install/share/switching_topology_pp_tracking_control_for_mas
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_observer switching_topology_pp_tracking_control_for_mas_observer
+
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_tracking_els1 switching_topology_pp_tracking_control_for_mas_tracking_els1
+
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_tracking_els2 switching_topology_pp_tracking_control_for_mas_tracking_els2
+
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_tracking_els3 switching_topology_pp_tracking_control_for_mas_tracking_els3
+
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_tracking_els4 switching_topology_pp_tracking_control_for_mas_tracking_els4
+
+ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topology_pp_tracking_control_for_mas_tracking_visual switching_topology_pp_tracking_control_for_mas_tracking_visual
 ```
 ### 2.3 Gazebo-based Physical Simulation Platform for the Two-Link Robotic Manipulator
 
 Launch the Gazebo-based physical simulation platform for the two-link robotic manipulator:
 
 ```bash
+
+source /opt/ros/noetic/setup.bash
+source install/setup.bash
+export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
+export ROS_PACKAGE_PATH=$PWD/install/share:$ROS_PACKAGE_PATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
 roslaunch two_link_arm_gazebo gazebo.launch 
 ```
 **Notice 3:** *It should be noted that, as long as Gazebo and RViz are successfully launched, the error messages displayed in the terminal do not affect the execution of the simulation and can therefore be ignored, as illustrated in the following figure:*
@@ -70,7 +84,7 @@ roslaunch two_link_arm_gazebo gazebo.launch
 Open a new terminal and Run the observer launch file:
 
 ```bash
-cd ~/your_workspace/paper_demo_ws
+cd ~/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies-main/paper_demo_ws
 source /opt/ros/noetic/setup.bash
 source install/setup.bash
 export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
@@ -84,7 +98,7 @@ roslaunch switching_topology_pp_tracking_control_for_mas run.launch
 Open a new terminal and Run the controller launch file:
 
 ```bash
-cd ~/your_workspace/paper_demo_ws
+cd ~/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies-main/paper_demo_ws
 source /opt/ros/noetic/setup.bash
 source install/setup.bash
 export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
