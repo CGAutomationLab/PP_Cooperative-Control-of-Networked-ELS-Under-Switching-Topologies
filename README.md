@@ -66,7 +66,7 @@ ln -sf ../../lib/switching_topology_pp_tracking_control_for_mas/switching_topolo
 Launch the Gazebo-based physical simulation platform for the two-link robotic manipulator:
 
 ```bash
-
+cd ~/PP_Cooperative-Control-of-Networked-ELS-Under-Switching-Topologies-main/paper_demo_ws
 source /opt/ros/noetic/setup.bash
 source install/setup.bash
 export CMAKE_PREFIX_PATH=$PWD/install:$CMAKE_PREFIX_PATH
