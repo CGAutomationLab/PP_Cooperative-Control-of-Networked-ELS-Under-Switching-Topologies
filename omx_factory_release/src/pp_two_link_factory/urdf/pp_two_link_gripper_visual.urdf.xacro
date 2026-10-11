@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="pp_two_link_gripper_visual" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="prefix" default="arm1_"/>
+  <xacro:include filename="$(find pp_two_link_factory)/urdf/pp_two_link_gripper_macro.xacro"/>
+  <xacro:pp_two_link_gripper prefix="$(arg prefix)"/>
+</robot>

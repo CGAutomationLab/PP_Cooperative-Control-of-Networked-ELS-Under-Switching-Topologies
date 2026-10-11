@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="pp_two_link_gripper_effort" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:arg name="prefix" default="arm1_"/>
+  <xacro:arg name="namespace" default="arm1"/>
+  <xacro:arg name="controller_config" default=""/>
+
+  <xacro:include filename="$(find pp_two_link_factory)/urdf/pp_two_link_gripper_macro.xacro"/>
+  <xacro:pp_two_link_gripper prefix="$(arg prefix)"/>
+
+  <ros2_control name="$(arg prefix)GazeboEffortSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="$(arg prefix)joint1">
+      <command_interface name="effort">
+        <param name="min">-15.0</param>
+        <param name="max">15.0</param>
+      </command_interface>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="$(arg prefix)joint2">
+      <command_interface name="effort">
+        <param name="min">-10.0</param>
+        <param name="max">10.0</param>
+      </command_interface>
+      <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(arg controller_config)</parameters>
+      <ros><namespace>/$(arg namespace)</namespace></ros>
+    </plugin>
+  </gazebo>
+</robot>

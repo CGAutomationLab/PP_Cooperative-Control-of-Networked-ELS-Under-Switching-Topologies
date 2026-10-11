@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>pp_cooperative_control</name>
+  <version>0.1.0</version>
+  <description>Binary-only PPV18 six-manipulator cooperative observer and tracking demonstration for ROS 2 Jazzy.</description>
+  <maintainer email="chengang@example.com">chengang</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>pp_two_link_factory</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>
