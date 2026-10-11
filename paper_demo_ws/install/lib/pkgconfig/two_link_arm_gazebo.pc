@@ -1,8 +1,0 @@
-prefix=/home/zhl/ur_demo_ws/install
-
-Name: two_link_arm_gazebo
-Description: Description of two_link_arm_gazebo
-Version: 0.0.1
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -ltwo_link_arm_gazebo
-Requires: controller_manager effort_controllers gazebo_ros gazebo_ros_control joint_state_controller robot_state_publisher roscpp sensor_msgs std_msgs trajectory_msgs xacro
