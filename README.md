@@ -214,6 +214,7 @@ ros2 topic hz /arm1/joint_states
 ### 6.2 Terminal 2 — Start the Distributed Observers
 
 ```bash
+source install/setup.bash
 ros2 launch pp_cooperative_control \
   six_observers.launch.py
 ```
@@ -233,6 +234,7 @@ Upon completion, each observer's full `nav_msgs/msg/Path` trajectory remains ava
 After the Gazebo controllers are active and all six observer results are ready, run:
 
 ```bash
+source install/setup.bash
 ros2 launch pp_cooperative_control \
   six_tracking.launch.py
 ```
